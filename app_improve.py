@@ -1,7 +1,7 @@
 import streamlit as st
 import sqlite3
 import pandas as pd
-from langchain_community.chat_models  import ChatOpenAI
+from langchain.chat_models import ChatOpenAI
 from sqlalchemy import create_engine, inspect
 from langchain import PromptTemplate
 from langchain.chains import LLMChain
