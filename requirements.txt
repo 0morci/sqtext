@@ -3,7 +3,7 @@ pandas
 ChatOpenAI; python_version<'3.5'
 create_engine; python_version<'3.5'
 inspect; python_version<'3.5'
-PromptTemplate
-LLMChain
-OpenAI
+PromptTemplate; python_version<'3.5'
+LLMChain; python_version<'3.5'
+OpenAI; python_version<'3.5'
 datetime
