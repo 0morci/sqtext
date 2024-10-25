@@ -1,1 +1,10 @@
-
+pip install streamlit
+pip install sqlite3
+pip install pandas
+pip install ChatOpenAI
+pip install create_engine
+pip install inspect
+pip install PromptTemplate
+pip install LLMChain
+pip install OpenAI
+pip install datetime
