@@ -19,15 +19,37 @@ current_minute= current_time.strftime("%M")
 st.title("SQText")
 st.write("""Transform your questions into queries!""")
 
+# Function to check if the provided API key is valid
+def is_api_key_valid(api_key):
+    headers = {
+        "Authorization": f"Bearer {api_key}"
+    }
+    # Making a simple API call to the OpenAI endpoint
+    try:
+        response = requests.get("https://api.openai.com/v1/models", headers=headers)
+        if response.status_code == 200:
+            return True
+        else:
+            return False
+    except Exception as e:
+        st.error(f"Error occurred while validating API key: {e}")
+        return False
+
+
 # Input field for user to enter their OpenAI API key
 if "user_api_key" not in st.session_state:
     st.session_state.user_api_key = None
 
 user_api_key = st.text_input("Enter your OpenAI API key:", type="password")
 
-# Store the API key in session state
+
+# Validate the API key upon entry
 if user_api_key:
-    st.session_state.user_api_key = user_api_key
+    if is_api_key_valid(user_api_key):
+        st.session_state.user_api_key = user_api_key
+        st.success("API key is valid!")
+    else:
+        st.error("Invalid API key. Please check and try again.")
 
 # Ensure user has entered their API key
 if not st.session_state.user_api_key:
