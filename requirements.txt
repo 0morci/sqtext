@@ -10,3 +10,5 @@ datetime
 langchain_community; python_version<'3.5'
 sqlalchemy; python_version<'3.5'
 langchain; python_version<'3.5'
+langchain_community.chat_models; python_version<'3.5'
+langchain.chains; python_version<'3.5'
