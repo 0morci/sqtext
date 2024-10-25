@@ -2,7 +2,7 @@ streamlit
 pandas
 ChatOpenAI; python_version<'3.5'
 create_engine; python_version<'3.5'
-inspect
+inspect; python_version<'3.5'
 PromptTemplate
 LLMChain
 OpenAI
