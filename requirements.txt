@@ -1,6 +1,6 @@
 streamlit
 pandas
-ChatOpenAI
+ChatOpenAI; python_version<'3.5'
 create_engine
 inspect
 PromptTemplate
