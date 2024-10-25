@@ -7,3 +7,6 @@ PromptTemplate; python_version<'3.5'
 LLMChain; python_version<'3.5'
 OpenAI; python_version<'3.5'
 datetime
+langchain_community; python_version<'3.5'
+sqlalchemy; python_version<'3.5'
+langchain; python_version<'3.5'
