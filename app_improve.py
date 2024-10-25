@@ -30,9 +30,12 @@ with st.expander("Upload your DB"):
     uploaded_file = st.file_uploader('', type=['.sql', '.db', '.sqlite', '.sqlite3', '.db3'],
                                     accept_multiple_files=False)
 if uploaded_file is not None:
-    st.write("DB succesfully uploaded!")
-    db_selected=1
-    db_path = uploaded_file.name 
+        # Save the uploaded file to the server
+        db_path = os.path.join("uploaded_database.db")  # Store in the current working directory
+        with open(db_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+        st.write("DB successfully uploaded!")
+
 
 while uploaded_file is None:
     st.stop()
