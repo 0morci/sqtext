@@ -2,5 +2,4 @@ streamlit>=1.0.0
 pandas>=1.0.0
 sqlalchemy>=1.4.0
 openai>=0.27.0
-langchain
-git+https://github.com/langchain/langchain_community.git  # If not in PyPI
+langchain  # Use the main langchain package
