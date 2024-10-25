@@ -137,16 +137,15 @@ Follow these guidelines:
 1. Base your responses solely on the provided schema.
 2. Use ONLY the tables and columns specified in the database schema.
 3. Do not introduce additional terms, aliases, or assumptions not present in the schema.
-4. When joining multiple tables, use table identifiers consistently.
-5. Maintain original column names throughout the query.
+4. Maintain original column names and table identifiers throughout the query.
+5. Ensure that your query references the exact names as defined in the schema. 
 6. If the question cannot be answered using the available tables, clearly state this limitation.
 
 Construct your answer as a JSON object with a single key "sql_query" containing the valid SQL query:
 {{"sql_query": "YOUR_SQL_QUERY_HERE"}}
 
 Additional requirements:
-- Use table aliases when joining tables (e.g., 't1', 't2') to improve readability.
-- Implement appropriate JOINs (INNER, LEFT, RIGHT) based on the relationship between tables.
+- Implement appropriate JOINs based on the relationship between tables, using the original names WITHOUT modifications.
 - Utilize WHERE clauses to filter data effectively.
 - Apply aggregation functions (SUM, AVG, COUNT, etc.) when necessary.
 - Include ORDER BY and LIMIT clauses if relevant to the question.
