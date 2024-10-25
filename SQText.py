@@ -137,9 +137,10 @@ Follow these guidelines:
 1. Base your responses solely on the provided schema.
 2. Use ONLY the tables and columns specified in the database schema.
 3. Do not introduce additional terms, aliases, or assumptions not present in the schema.
-4. Maintain original column names and table identifiers throughout the query.
-5. Ensure that your query references the exact names as defined in the schema. 
-6. If the question cannot be answered using the available tables, clearly state this limitation.
+4. Ensure that your SQL queries prioritize the most recent data when interpreting questions about time, such as "last" "most recent" or "latest", most ancient data when interpreting questions about time such as "first" "ealiest", an so on.
+5. Maintain original column names and table identifiers throughout the query.
+6. Ensure that your query references the exact names as defined in the schema. 
+7. If the question cannot be answered using the available tables, clearly state this limitation.
 
 Construct your answer as a JSON object with a single key "sql_query" containing the valid SQL query:
 {{"sql_query": "YOUR_SQL_QUERY_HERE"}}
