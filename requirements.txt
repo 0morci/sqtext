@@ -1,14 +1,6 @@
-streamlit
-pandas
-ChatOpenAI; python_version<'3.5'
-create_engine; python_version<'3.5'
-inspect; python_version<'3.5'
-PromptTemplate; python_version<'3.5'
-LLMChain; python_version<'3.5'
-OpenAI; python_version<'3.5'
-datetime
-langchain_community; python_version<'3.5'
-sqlalchemy; python_version<'3.5'
-langchain; python_version<'3.5'
-langchain_community.chat_models; python_version<'3.5'
-langchain.chains; python_version<'3.5'
+streamlit>=1.0.0
+pandas>=1.0.0
+sqlalchemy>=1.4.0
+openai>=0.27.0
+langchain
+git+https://github.com/langchain/langchain_community.git  # If not in PyPI
