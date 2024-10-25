@@ -8,6 +8,8 @@ from langchain.chains import LLMChain
 from openai import OpenAI
 import datetime
 import os
+import requests
+
 
 current_time = datetime.datetime.now().date()
 current_year= current_time.strftime("%Y")
