@@ -19,12 +19,28 @@ current_minute= current_time.strftime("%M")
 st.title("SQText")
 st.write("""Transform your questions into queries!""")
 
+# Input field for user to enter their OpenAI API key
+if "user_api_key" not in st.session_state:
+    st.session_state.user_api_key = None
+
+user_api_key = st.text_input("Enter your OpenAI API key:", type="password")
+
+# Store the API key in session state
+if user_api_key:
+    st.session_state.user_api_key = user_api_key
+
+# Ensure user has entered their API key
+if not st.session_state.user_api_key:
+    st.warning("Please enter your API key to continue.")
+    st.stop()
+
+
 # Create a session state variable to store the chat messages. This ensures that the
 # messages persist across reruns.
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key="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")
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key=st.session_state.user_api_key)
 db_path=''
 
 with st.expander("Upload your DB"):
